@@ -1,11 +1,10 @@
 <template>
   <div>
-      This is Dashboard
+      this is AppMain
   </div>
 </template>
 
 <script>
-
 export default {
 
 }

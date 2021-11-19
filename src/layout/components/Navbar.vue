@@ -1,11 +1,10 @@
 <template>
   <div>
-      This is Dashboard
+      this is navbar
   </div>
 </template>
 
 <script>
-
 export default {
 
 }
