@@ -1,5 +1,5 @@
 <template>
-  <div  class="app-wrapper">
+  <div :class="classObj" class="app-wrapper">
       <sidebar class="sidebar-container"/>
       <div class="main-container">
           <div >
@@ -20,10 +20,31 @@ export default {
     Sidebar,
     Navbar,
     AppMain
+  },
+  computed:{
+    sidebar(){
+     return this.$store.state.app.sidebar
+    },
+    classObj() {
+      return {
+        hideSidebar: !this.sidebar.opened,
+        openSidebar: this.sidebar.opened,
+        withoutAnimation: this.sidebar.withoutAnimation,
+        mobile: this.device === 'mobile'
+      }
+    }
   }
 }
 </script>
 
-<style>
+<style lang='scss' scoped>
+  @import "~@/styles/variables.scss";
+  @import "~@/styles/mixin.scss";
 
+  .app-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    @include clearfix;
+  }
 </style>

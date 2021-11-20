@@ -1,0 +1,125 @@
+#app {
+ .main-container {
+    height: 100%;
+    margin-left: $sideBarWidth;
+    position: relative;
+    transition: margin-left .28s;
+ }
+ .sidebar-container {
+     width: $sideBarWidth !important;
+     background-color: $menuBg;
+     height: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     overflow: hidden;
+     font-size: 18px;
+     transition: width 0.28s;
+     z-index: 1001;
+
+
+     a {
+        // display: inline-block;
+        width: 100%;
+        overflow: hidden;
+    }
+    .svg-icon {
+        margin-right: 16px;
+    }
+    .sub-el-icon {
+        margin-right: 12px;
+        margin-left: -2px;
+    }
+   
+    .el-menu {
+       border: none;
+       height: 100%;
+       width: 100% !important;
+    }
+    .submenu-title-noDropdown,
+       .el-submenu__title {
+         &:hover {
+           background-color: $menuHover !important;
+         }
+    }
+    
+      & .nest-menu .el-submenu>.el-submenu__title,
+      & .el-submenu .el-menu-item {
+        min-width: $sideBarWidth !important;
+        background-color: $subMenuBg !important;
+  
+        &:hover {
+          background-color: $subMenuHover !important;
+        }
+      }
+ }
+ 
+ .hideSidebar {
+    .el-menu-item div{
+        padding-left: 20px;
+    }
+    .el-menu-item span{
+        display: none;
+    }
+
+    .sidebar-container {
+      width: 54px !important;
+    }
+
+    .main-container {
+      margin-left: 54px;
+    }
+
+    .submenu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+
+        .svg-icon {
+          margin-left: 20px;
+        }
+
+        .sub-el-icon {
+          margin-left: 19px;
+        }
+      }
+    }
+
+    .el-submenu {
+      overflow: hidden;
+
+      &>.el-submenu__title {
+        padding: 0 !important;
+
+        .svg-icon {
+          margin-left: 20px;
+        }
+
+        .sub-el-icon {
+          margin-left: 19px;
+        }
+
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  
+}
