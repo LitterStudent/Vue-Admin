@@ -7,7 +7,7 @@
           </div>
           <app-main />
       </div>
-      this is Layout
+      this is Layout2
   </div>
 </template>
 

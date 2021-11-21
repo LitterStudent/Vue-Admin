@@ -56,7 +56,7 @@ export default {
  },
  methods: {
      hasOneShowingChild(children = [], parent){
-        console.log(parent);
+      //   console.log(parent);
          const showingChildren = children.filter(item=>{
             //过滤掉子路由中hidden为true的路由
              if(item.hidden){
@@ -70,7 +70,7 @@ export default {
          // console.log(this.onlyOneChild);
          
          if(showingChildren.length === 1){
-            console.log(this.onlyOneChild);
+            // console.log(this.onlyOneChild);
              return true
          }
          if(showingChildren.length === 0){

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    this is main
+  <div class="app-main">
      <router-view :key="key" />
+     
   </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.app-main {
+  /*50 = navbar  */
+  min-height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 </style>

@@ -13,6 +13,9 @@
 import pathToRegexp from 'path-to-regexp'
 
 export default {
+   created() {
+    this.getBreadcrumb()
+  },
   data() {
     return {
       levelList: null
@@ -22,9 +25,6 @@ export default {
     $route() {
       this.getBreadcrumb()
     }
-  },
-  created() {
-    this.getBreadcrumb()
   },
   methods: {
     getBreadcrumb() {
@@ -57,7 +57,8 @@ export default {
         this.$router.push(redirect)
         return
       }
-      this.$router.push(this.pathCompile(path))
+      console.log(path);
+      this.$router.push(path)
     }
   }
 }

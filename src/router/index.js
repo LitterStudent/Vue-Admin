@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const constantRoutes = [
   {
     path: '/login',
-    component: () => import('@/views/login.vue'),
+    component: () => import('@/views/login/index.vue'),
     hidden:true
   },
   {
@@ -58,8 +58,18 @@ const constantRoutes = [
   { path: '*', component:() => import('@/views/404'), redirect: '/404', hidden: true }
 ]
 
-const router = new VueRouter({
-  routes:constantRoutes
-})
+const createRouter = ()=>{
+  return new VueRouter({
+    routes:constantRoutes
+  });
+}
 
+
+const router = createRouter()
 export default router
+
+export function resetRouter(){
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher
+}
+
